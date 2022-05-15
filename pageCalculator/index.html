@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IFSP</title>
+</head>
+<script>
+
+    function sum(x, y)
+    {
+        return x + y;
+    };
+
+    function sub(x, y)
+    {
+        return x - y;
+    };
+
+    function div(x, y)
+    {
+        return x / y;
+    };
+
+    function multiplication(x, y)
+    {
+        return x * y;
+    };
+
+    function callbackAfterOperationButtonClick()
+    {
+
+        let result;
+        let operator = document.getElementById("operator").value;
+        let inputs = document.getElementsByTagName("input");
+        let firstInputNumber = parseFloat(inputs[0].value);
+        let secondInputNumber = parseFloat(inputs[1].value);
+
+        switch (operator)
+        {
+            case "+":
+                result = sum(firstInputNumber, secondInputNumber);
+                break;
+            case "-":
+                result = sub(firstInputNumber, secondInputNumber);
+                break;
+            case "/":
+                result = div(firstInputNumber, secondInputNumber);
+                break;
+            case "x":
+                result = multiplication(firstInputNumber, secondInputNumber)
+                break;
+        }
+
+        isNaN(result) ? document.getElementById("result").textContent = "A divisão por zero não é definida": document.getElementById("result").textContent = result;
+    };
+
+    function clearInputs()
+    {
+        let inputs = document.getElementsByTagName("input");
+        for(var i = 0; i < inputs.length; i++)
+        {
+            inputs[i].value = "0";
+        };
+
+        document.getElementById("result").textContent = "0";
+    };
+
+</script>
+<style>
+    input {
+        width: 65px;
+    }
+</style>
+<body>
+    <h1 style="text-align: center;">Calculadora IFSP</h1>
+    <main style="text-align: center;">
+        <div>
+            <span><input type="number" value="0"></span>
+            <select id="operator">
+                <option value="+" selected="selected">+</option>
+                <option value="-">-</option>
+                <option value="/">÷</option>
+                <option value="x">x</option>
+            </select>
+            <span><input type="number" value="0"></span>
+            <button style="width: 50px;" onclick="callbackAfterOperationButtonClick()">=</button>
+            <button style="width: 50px;" onclick="clearInputs()">C</button>
+        </div>
+        <div>
+            <p id="result">0</p>
+        </div>
+    </main>
+</body>
+</html>
