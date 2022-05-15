@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramenta para checar maioridade</title>
+</head>
+<script>
+    function verificarIdade(){
+        let idade = document.getElementById("idade").value;
+        let printAge = document.getElementById("printAge");
+
+        if(!idade){
+            printAge.textContent = name + " informe sua idade";
+        } else {
+            if(idade <= 0)
+            {
+                printAge.textContent = name + " você ainda não nasceu";
+            } else if(idade >= 18 && idade <= 100)
+            {
+                printAge.textContent = name + " é maior de idade";
+            } else if(idade < 18){
+                printAge.textContent = name + " é menor de idade";
+            } else if(idade > 100) {
+                printAge.textContent = name + " você já morreu";
+            }
+        }
+    };
+
+    var name = window.prompt("Informe seu nome: ");
+    if(name)
+    {
+        document.writeln(name);
+    }
+    else
+    {
+        name = "Visitante";
+        document.writeln(name);
+    };
+    
+    setInterval(verificarIdade, 1000);
+
+</script>
+<body>
+    <div>
+        <input type="text" id="idade" name="idade" value="">
+        <p id="printAge"></p>
+    </div>
+</body>
+</html>
