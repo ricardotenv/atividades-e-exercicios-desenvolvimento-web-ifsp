@@ -1,6 +1,8 @@
 # atividades-e-exercicios-desenvolvimento-web-ifsp
 Atividades e exercícios da matéria de Desenvolvimento Web do IFSP ministrado pela professora Giorjety
 
+https://ricardotenv.github.io/atividades-e-exercicios-desenvolvimento-web-ifsp/
+
 ## [Verificar se o usuário é menor de idade](https://github.com/ricardotenv/atividades-e-exercicios-desenvolvimento-web-ifsp/blob/3b36d38f799fa35aea21c7b81ad02c231ff5bf24/checkMajority)
 
 1. Faça um script interno, utilizando a linguagem JavaScript, em que:
